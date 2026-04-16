@@ -29,7 +29,10 @@ export class PersonaComponent implements OnInit {
   //TODO: revisar si funciona sin el ChangeDetectorRef
   cargarPersonaComponent() {
     this.personaService.getPersonasHttp().subscribe({
-      next: (data: Persona[]) => this.personas = data,
+      next: (data: Persona[]) => {
+        this.personas = data;
+        this.cdr.detectChanges();
+      },
       error: (err: any) => console.error(err)
     })
   }

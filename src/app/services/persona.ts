@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PersonaService {
-  private apiUrl = 'http://localhost:6789/api/v1/entities/personas/';
+  private apiUrl = 'http://localhost:6789/api/v1/entities/personas';
   constructor(private http: HttpClient) {}
 
   getPersonasHttp(): Observable<Persona[]> {
